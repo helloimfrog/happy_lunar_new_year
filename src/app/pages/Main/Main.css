@@ -1,0 +1,17 @@
+.tap-to-open-main-view {
+  background-image: url("../../assets/app_background.jpg");
+  background-size: 100% 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+}
+
+.click-to-play {
+  font-family: 'Pacifico', cursive;
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}

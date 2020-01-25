@@ -1,5 +1,6 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
+  click_to_play: "Nhấn vào chú chuột để xem điều bất ngờ nhé",
   from_author: "From #Frog2k With Love"
 }
 

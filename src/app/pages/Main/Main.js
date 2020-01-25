@@ -1,9 +1,11 @@
 import React from 'react';
 import FirstPage from './components/FirstPage';
 import SecondPage from './components/SecondPage';
-import ReactAudioPlayer from 'react-audio-player';
 import { Spring, Transition, animated } from 'react-spring/renderprops';
 import AppMusic from '../../utils/AppMusic';
+
+import './Main.css'
+import AppString from '../../utils/AppString';
 
 const pages = [
   animationProps =>
@@ -31,30 +33,52 @@ export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: 0
+      currentScreen: 0,
+      showContent: false
     };
-    this.music = new Audio(AppMusic.getRandom());
-  }
-
-  componentDidMount() {
-    this.music.play();
-    setTimeout(() => this.setState({ currentScreen: 1 }), 5000);
+    this.music = AppMusic.getRandom();
   }
 
   render() {
     return (
       <div>
-        <Transition
-          native
-          reset
-          unique
-          items={this.state.currentScreen}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}>
-          {currentScreen => pages[currentScreen]}
-        </Transition>
+        <audio
+          ref={ref => this.audioPlayer = ref}>
+          <source type="audio/mp3" src={this.music} />
+        </audio>
+        {
+          this.state.showContent
+            ?
+            <Transition
+              native
+              reset
+              unique
+              items={this.state.currentScreen}
+              from={{ opacity: 0 }}
+              enter={{ opacity: 1 }}
+              leave={{ opacity: 0 }}>
+              {currentScreen => pages[currentScreen]}
+            </Transition>
+            :
+            <div className="tap-to-open-main-view">
+              <img
+                onClick={this._onClickToPlay}
+                style={{ maxHeight: '20%', maxWidth: '20%', marginRight: 10 }}
+                src={require('../../assets/animal_of_year.webp')}
+              />
+              <span className="click-to-play">
+                {AppString.get('click_to_play')}
+              </span>
+            </div>
+        }
       </div>
     );
+  }
+
+  _onClickToPlay = () => {
+    this.setState({ showContent: true }, () => {
+      this.audioPlayer.play();
+      setTimeout(() => this.setState({ currentScreen: 1 }), 5000);
+    })
   }
 }
