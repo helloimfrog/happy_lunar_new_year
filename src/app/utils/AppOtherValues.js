@@ -1,0 +1,1 @@
+export const MAX_SCREEN_MOBILE_WIDTH = 890
