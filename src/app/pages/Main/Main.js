@@ -33,20 +33,17 @@ export default class Main extends React.Component {
     this.state = {
       currentScreen: 0
     };
-    this.music = AppMusic.getRandom();
+    this.music = new Audio(AppMusic.getRandom());
   }
 
   componentDidMount() {
+    this.music.play();
     setTimeout(() => this.setState({ currentScreen: 1 }), 5000);
   }
 
   render() {
     return (
       <div>
-        <ReactAudioPlayer
-          src={this.music}
-          autoPlay
-        />
         <Transition
           native
           reset
