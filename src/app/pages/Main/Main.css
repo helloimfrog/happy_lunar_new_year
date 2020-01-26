@@ -11,7 +11,9 @@
 
 .click-to-play {
   font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  text-align: center;
   margin-top: 15px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 35px;
+  margin-right: 35px;
 }

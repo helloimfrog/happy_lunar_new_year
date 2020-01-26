@@ -6,6 +6,7 @@ import AppMusic from '../../utils/AppMusic';
 
 import './Main.css'
 import AppString from '../../utils/AppString';
+import { MAX_SCREEN_MOBILE_WIDTH } from '../../utils/AppOtherValues';
 
 const pages = [
   animationProps =>
@@ -34,12 +35,26 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       currentScreen: 0,
-      showContent: false
+      showContent: false,
+      screenSize: {
+        height: window.innerHeight,
+        width: window.innerWidth
+      }
     };
     this.music = AppMusic.getRandom();
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', () => this.setState({
+      screenSize: {
+        height: window.innerHeight,
+        width: window.innerWidth
+      }
+    }))
+  }
+
   render() {
+    const { showContent, currentScreen } = this.state;
     return (
       <div>
         <audio
@@ -47,32 +62,41 @@ export default class Main extends React.Component {
           <source type="audio/mp3" src={this.music} />
         </audio>
         {
-          this.state.showContent
+          showContent
             ?
             <Transition
               native
               reset
               unique
-              items={this.state.currentScreen}
+              items={currentScreen}
               from={{ opacity: 0 }}
               enter={{ opacity: 1 }}
               leave={{ opacity: 0 }}>
               {currentScreen => pages[currentScreen]}
             </Transition>
-            :
-            <div className="tap-to-open-main-view">
-              <img
-                onClick={this._onClickToPlay}
-                style={{ maxHeight: '20%', maxWidth: '20%', marginRight: 10 }}
-                src={require('../../assets/animal_of_year.webp')}
-              />
-              <span className="click-to-play">
-                {AppString.get('click_to_play')}
-              </span>
-            </div>
+            : this._renderClickToPlay()
         }
       </div>
     );
+  }
+
+  _renderClickToPlay() {
+    const { screenSize } = this.state;
+    const maxHeight = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
+    const maxWidth = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
+    return (
+      <div className="tap-to-open-main-view">
+        <img
+          alt="click-to-play"
+          onClick={this._onClickToPlay}
+          style={{ maxHeight, maxWidth, marginRight: 10 }}
+          src={require('../../assets/animal_of_year_2.png')}
+        />
+        <span className="click-to-play">
+          {AppString.get('click_to_play')}
+        </span>
+      </div>
+    )
   }
 
   _onClickToPlay = () => {

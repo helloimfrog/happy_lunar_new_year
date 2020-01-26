@@ -2,7 +2,6 @@ import React from 'react';
 import { Fireworks } from 'fireworks/lib/react';
 import { Spring } from 'react-spring/renderprops';
 import AppString from '../../../../utils/AppString';
-import { MAX_SCREEN_MOBILE_WIDTH } from '../../../../utils/AppOtherValues';
 
 import './SecondPage.css';
 
@@ -37,19 +36,23 @@ export default class FirstPage extends React.Component {
         }
         <div className="wish-zone" style={{ height: window.innerHeight * 2 / 3 }}>
           <img
+            alt="blossom-top-left"
             className="blossom-top-left"
             style={{ maxHeight: 150 }}
             src={require('../../../../assets/blossom_top_left.png')}
           />
           <img
+            alt="blossom-bottom-right"
             className="blossom-bottom-right"
             style={{ maxHeight: 150 }}
             src={require('../../../../assets/blossom_bottom_right.png')}
           />
           <div className='from-author'>
             <img
+              alt="animal-of-year"
+              className="animal-of-year"
               style={{ maxHeight: 60, maxWidth: 60, marginRight: 10 }}
-              src={require('../../../../assets/animal_of_year.webp')}
+              src={require('../../../../assets/animal_of_year.png')}
             />
             <Spring
               from={{ opacity: 0 }}

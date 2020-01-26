@@ -6,7 +6,7 @@ const musicList = [
 ];
 
 function getRandom() {
-  return musicList[Math.floor(Math.random() * (musicList.length - 1))];
+  return musicList[Math.floor(Math.random() * (musicList.length))];
 }
 
 export default {

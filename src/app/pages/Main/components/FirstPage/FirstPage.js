@@ -40,6 +40,7 @@ export default class FirstPage extends React.Component {
         >
           {props =>
             <img
+              alt="blossom-top-left"
               style={props}
               className="blossom"
               src={require('../../../../assets/blossom.png')}
@@ -57,6 +58,7 @@ export default class FirstPage extends React.Component {
         >
           {props =>
             <img
+              alt="2020-logo"
               className="logo-2020"
               style={props}
               src={require('../../../../assets/2020_logo.png')}

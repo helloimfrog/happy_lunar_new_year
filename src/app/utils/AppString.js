@@ -6,7 +6,10 @@ const strings = {
 
 const wishes = [
   "Năm mới Canh Tý, được crush chú ý, yêu đương mệt nghỉ, lộc tràn, phú quý.",
-  "Tết này không có Táo Quân nhưng chúc bạn năm mới sớm có phu quân.",
+  "Chúc bạn năm mới một rổ tiếng cười, niềm vui và lời chúc ấm áp của tôi từ ngàn dặm xa xôi gửi tặng cho bạn tốt của tôi. Chúc bạn năm mới hạnh phúc, gặp nhiều may mắn và thành công!",
+  "Chúc mừng năm mới – vạn sự như ý – sinh lý dồi dào – vàng vào cả ký – tiền ra ti tí – thật là hết ý.",
+  "Chiềng làng chiềng xã, thượng hạ đông tây, xa gần đó đây, vểnh tai nghe chúc: Tân niên sung túc, lắm phúc nhiều duyên, trong túi nhiều tiền, tâm hồn vui sướng.",
+  "Năm mới, chúc bạn sắc đẹp tuyệt vời, tiền vô phơi phới, người yêu không cần tìm cũng tự tới.",
   "Năm mới vui vẻ không quạu nha.",
   "Chúc anh, chúc chị năm nay Canh Tý không bị deadline dí.",
   "Chúc mừng năm mới. Công danh sáng ngời. May mắn khắp nơi, đổ về tơi tới.",
@@ -28,7 +31,7 @@ const wishes = [
   "Mỗi năm là một mùa hoa nở, mỗi năm là một mùa bội thu. Cuộc sống như cây đang lớn. Chúc bạn một năm mới Vạn sự như ý.",
   "Đầu xuân năm mới chúc Bình An; Chúc luôn Tuổi Trẻ chúc An Khang; Chúc sang năm mới nhiều Tài Lộc; Công thành danh toại chúc Vinh Quang.",
   "Chúc mọi người vui vẻ như Chim Sẻ, khỏe mạnh như Đại Bàng, giàu sang như chim Phụng, làm lụng như chim Sâu, sống lâu như Đà Điểu.",
-  "Chúc mọi người hay ăn chóng béo, tiền nhiều như kẹo, tình chặt như keo, dẻo dai như mèo, mịn màng trắng trẻo, sức khỏe như voi. Năm mới năm me Gia đình mạnh khỏe Mọi người tươi trẻ Đi chơi vui vẻ.",
+  "Chúc mọi người hay ăn chóng béo, tiền nhiều như kẹo, tình chặt như keo, dẻo dai như mèo, mịn màng trắng trẻo, sức khỏe như voi, gia đình mạnh khỏe, mọi người tươi trẻ, đi chơi vui vẻ.",
   "Năm mới: Đau đầu vì nhà giàu! Mệt mỏi vì học giỏi! Buồn phiền vì nhiều tiền! Ngang trái vì xinh gái! Mệt mỏi vì đẹp giai! Và mất ngủ vì không có đối thủ!",
   "Chúc các bạn có nhiều người để ý. Tỏ tình nhiều ý. Tiền nhiều nặng ký. Công việc vừa ý. Miệng cười mắt ti hí. Sống Lâu Một tí.",
   "Năm mới phát tài, phát lộc, phát tướng, phát tình nhưng đừng phát phì!"
