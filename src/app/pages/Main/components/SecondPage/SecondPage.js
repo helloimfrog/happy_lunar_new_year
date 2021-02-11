@@ -1,15 +1,19 @@
 import React from 'react';
-import { Fireworks } from 'fireworks/lib/react';
 import { Spring } from 'react-spring/renderprops';
 import AppString from '../../../../utils/AppString';
 
 import './SecondPage.css';
 
-export default class FirstPage extends React.Component {
+export default class SecondPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      showFirework: true
+      showFirework: true,
+      rotated: "",
+      rotating: "",
+      rotatingMainBox: "",
+      rotatingArrows: "",
+      showWishZone: "none"
     }
     this.wishQuote = AppString.getRandomWish();
   }
@@ -19,22 +23,11 @@ export default class FirstPage extends React.Component {
   }
 
   render() {
-    let fxProps = {
-      count: 3,
-      interval: 1500,
-      colors: ['#cc3333', '#4CAF50', '#81C784'],
-      calc: (props, i) => ({
-        ...props,
-        x: (i + 1) * (window.innerWidth / 3) - (i + 1) * 100,
-        y: window.innerHeight / 2 - 100
-      })
-    }
     return (
       <div className="main-view-of-2nd-screen">
-        {
-          this.state.showFirework ? <Fireworks {...fxProps} /> : null
-        }
-        <div className="wish-zone" style={{ height: window.innerHeight * 2 / 3 }}>
+        {this._renderGiftBox()}      
+
+        <div className="wish-zone" style={{ height: window.innerHeight * 2 / 3, display:`${this.state.showWishZone}` }}>
           <img
             alt="blossom-top-left"
             className="blossom-top-left"
@@ -52,7 +45,7 @@ export default class FirstPage extends React.Component {
               alt="animal-of-year"
               className="animal-of-year"
               style={{ maxHeight: 60, maxWidth: 60, marginRight: 10 }}
-              src={require('../../../../assets/animal_of_year.png')}
+              src={require('../../../../assets/animal_of_year_2021.png')}
             />
             <Spring
               from={{ opacity: 0 }}
@@ -77,5 +70,63 @@ export default class FirstPage extends React.Component {
         </div>
       </div>
     );
+  }
+  _animate(){
+    let isDone = this.state.rotated === "rotated" ? true : false;
+    let init_state= this.state;
+    if (!isDone) {
+      this.setState({ rotating: "rotating", rotatingMainBox: "rotating-down", rotatingArrows: "rotating-arrows" });
+      setTimeout(() => {
+        this.setState({ rotated: "rotated" }, () =>{
+          this.setState({
+            showWishZone: "flex",
+          })
+        });
+      }, 1000);
+    } else {
+      this.setState(init_state)
+    }
+  }
+
+  _renderGiftBox(){
+    const {rotated, rotating, rotatingMainBox, rotatingArrows} = this.state;
+    console.log(this.state)
+
+    return(
+      <div style={{
+
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        flexDirection: "column"
+      }}>
+        <div className={`wrapTextArrow ${rotatingArrows}`}>
+          <div className="textBox">
+            {AppString.get('label_gift_box')}
+          </div>
+          <div className="arrows"></div>
+        </div>
+        <div className="wrapGiftBox" onClick={() => this._animate()}>
+          <div className="lidGiftBox">
+            <img
+                alt="lidGiftBox__lid"
+                className={`lidGiftBox__lid ${rotating} ${rotated}`}
+                src={require('../../../../assets/lid_gift_box.png')}
+              />
+          </div>
+          <div className="mainGiftBox">
+            <img
+                alt="mainGiftBox__main"
+                className={`mainGiftBox__main ${rotatingMainBox}`}
+                src={require('../../../../assets/main_gift_box.png')}
+              />
+          </div>
+        </div>
+      </div>
+
+    )
   }
 }
