@@ -1,7 +1,8 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
   click_to_play: "Nhấn vào chú trâu để xem điều bất ngờ nhé",
-  from_author: "From #Frog2k With Love"
+  from_author: "From #Frog2k With Love",
+  label_gift_box: "Chọn hộp quà và chờ đợi phần quà nhé"
 }
 
 const wishes = [
@@ -13,7 +14,6 @@ const wishes = [
   "Chúc mừng năm mới. Công danh sáng ngời. May mắn khắp nơi, đổ về tơi tới.",
   "Năm mới chúc tất cả các bạn mình xinh như hình đại diện Facebook, ảnh nháy triền miên đăng liền không cần sửa.",
   "Năm mới chúc nhau sức khỏe nhiều. Bạc tiền rủng rỉnh thoải mái tiêu. Gia đình hạnh phúc bè bạn quý. Thanh thản vui chơi mọi buổi chiều.",
-  "Năm nay \"năm chuột\", dáng chị thì nuột, dáng anh thì đô, chúc dì chúc cô, ngày nào cũng khỏe.",
   "Có 4 kẻ đang đòi tìm cho bằng được bạn. 4 kẻ đó tên là \"Thần Tài\", \"May Mắn\", \"Hạnh Phúc\" và \"Sức Khoẻ\". Họ chắc chắn tìm được bạn trong năm mới này.",
   "Năm mới chúc nhà nhà phát tài phát lộc! Kính chúc ông bà mạnh khỏe, sống lâu vài trăm tuổi, kính chúc ba mẹ phát tài phát lộc kiếm thật nhiều tiền. Chúc các em nhỏ hay ăn chóng lớn nghe lời ba mẹ.",
   "Lộc biếc, mai vàng, xuân hạnh phúc. Đời vui, sức khỏe, Tết an khang.",
