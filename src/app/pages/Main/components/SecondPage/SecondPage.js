@@ -1,5 +1,6 @@
 import React from 'react';
 import AppString from '../../../../utils/AppString';
+import { getRandomLogoForWishCard } from '../../../../utils/AppOtherValues';
 
 import './SecondPage.css';
 
@@ -23,9 +24,22 @@ export default class SecondPage extends React.Component {
           <img
             alt="blossom-top-left"
             className="blossom-top-left"
-            style={{ maxHeight: 150 }}
             src={require('../../../../assets/blossom_top_left.png')}
           />
+          <div className="row wish-quote-image-container">
+            <div className="col-lg-4 wish-quote-image-wrapper">
+              <img
+                alt="kid-lunar-new-year"
+                className="wish-kids-logo"
+                src={getRandomLogoForWishCard()}
+              />
+            </div>
+            <div className="col-lg-6 wish-quote-image-wrapper">
+              <span className="wish-quote">
+                {this.wishQuote}
+              </span>
+            </div>
+          </div>
           <img
             alt="blossom-bottom-right"
             className="blossom-bottom-right"
@@ -36,12 +50,10 @@ export default class SecondPage extends React.Component {
             <img
               alt="animal-of-year"
               className="animal-of-year"
-              style={{ maxHeight: 60, maxWidth: 60, marginRight: 10 }}
               src={require('../../../../assets/animal_of_year_2021.png')}
             />
             <span>{AppString.get("from_author")}</span>
           </div>
-          <span className="wish-quote">{this.wishQuote}</span>
         </div>
       </div>
     );
@@ -61,7 +73,7 @@ export default class SecondPage extends React.Component {
     return (
       <div className="wrap-text-arrow-giftbox">
         <div className={`wrap-text-arrow ${rotatingArrows}`}>
-          <div className="text-label">
+          <div className="click-to-open-gift-text">
             {AppString.get('label_gift_box')}
           </div>
           <div className="arrows"></div>

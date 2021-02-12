@@ -14,7 +14,7 @@ export default class FirstPage extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ showFireworks: false }), 5000);
+    setTimeout(() => this.setState({ showFireworks: false }), 4500);
   }
 
   render() {
@@ -37,9 +37,10 @@ export default class FirstPage extends React.Component {
             ? <Fireworks {...fxProps} />
             : null
         }
+        <div className="cloud-top-container"/>
         <img
-          alt="2020-logo"
-          className="logo-2020"
+          alt="2021-logo"
+          className="logo-2021"
           src={require('../../../../assets/2021_logo.png')}
         />
       </div>
