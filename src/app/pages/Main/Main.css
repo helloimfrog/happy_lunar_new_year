@@ -1,6 +1,12 @@
+.main-view {
+  scroll-behavior: smooth;
+}
+
 .tap-to-open-main-view {
-  background-image: url("../../assets/app_background.jpg");
-  background-size: 100% 100%;
+  background-image: url("../../assets/app_background_2.jpg");
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   align-items: center;

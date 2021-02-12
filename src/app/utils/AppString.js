@@ -1,17 +1,15 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
-  click_to_play: "Nhấn vào chú chuột để xem điều bất ngờ nhé",
+  click_to_play: "Nhấn vào chú trâu để xem điều bất ngờ nhé",
   from_author: "From #Frog2k With Love"
 }
 
 const wishes = [
-  "Năm mới Canh Tý, được crush chú ý, yêu đương mệt nghỉ, lộc tràn, phú quý.",
   "Chúc bạn năm mới một rổ tiếng cười, niềm vui và lời chúc ấm áp của tôi từ ngàn dặm xa xôi gửi tặng cho bạn tốt của tôi. Chúc bạn năm mới hạnh phúc, gặp nhiều may mắn và thành công!",
   "Chúc mừng năm mới – vạn sự như ý – sinh lý dồi dào – vàng vào cả ký – tiền ra ti tí – thật là hết ý.",
   "Chiềng làng chiềng xã, thượng hạ đông tây, xa gần đó đây, vểnh tai nghe chúc: Tân niên sung túc, lắm phúc nhiều duyên, trong túi nhiều tiền, tâm hồn vui sướng.",
   "Năm mới, chúc bạn sắc đẹp tuyệt vời, tiền vô phơi phới, người yêu không cần tìm cũng tự tới.",
   "Năm mới vui vẻ không quạu nha.",
-  "Chúc anh, chúc chị năm nay Canh Tý không bị deadline dí.",
   "Chúc mừng năm mới. Công danh sáng ngời. May mắn khắp nơi, đổ về tơi tới.",
   "Năm mới chúc tất cả các bạn mình xinh như hình đại diện Facebook, ảnh nháy triền miên đăng liền không cần sửa.",
   "Năm mới chúc nhau sức khỏe nhiều. Bạc tiền rủng rỉnh thoải mái tiêu. Gia đình hạnh phúc bè bạn quý. Thanh thản vui chơi mọi buổi chiều.",
