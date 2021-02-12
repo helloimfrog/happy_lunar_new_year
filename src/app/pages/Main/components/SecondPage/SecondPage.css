@@ -1,10 +1,10 @@
 .main-view-of-2nd-screen {
-  background-image: url("../../../../assets/background_gift.jpg");
-  background-size: 100% 100%;
+  min-width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: black;
 }
 
@@ -23,10 +23,25 @@
   transform: rotate(-5deg) scale(0);
 }
 
+.wish-kids-logo {
+  height: 300px
+}
+
 .wish-zone-anim {
   animation: show-wish-zone 1s;
   animation-delay: 0.2s;
   animation-fill-mode: forwards;
+}
+
+.wish-quote-image-container {
+  width: 100%;
+  justify-content: center;
+}
+
+.wish-quote-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wish-quote {
@@ -41,7 +56,8 @@
 .blossom-top-left {
   position: absolute;
   top: 0;
-  left: 0
+  left: 0;
+  max-height: 150px;
 }
 
 .blossom-bottom-right {
@@ -62,7 +78,7 @@
   font-family: 'Pacifico', cursive;
 }
 
-.text-label {
+.click-to-open-gift-text {
   margin-bottom: 20px;
   font-size: 20px;
   font-family: 'Pacifico', cursive;
@@ -93,64 +109,6 @@
   margin-bottom: 20px;
 }
 
-@keyframes show-wish-zone {
-  0% {
-    opacity: 0;
-    transform: rotate(-5deg) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(-5deg) scale(1);
-  }
-}
-
-@keyframes wiggle {
-  10%, 90% {
-    transform: translate3d(-2px, 0, 0);
-  }
-  20%, 80% {
-    transform: translate3d(3px, 0, 0);
-  }
-  30%, 50%, 70% {
-    transform: translate3d(-5px, 0, 0);
-  }
-  40%, 60% {
-    transform: translate3d(5px, 0, 0);
-  }
-}
-
-@keyframes rotating-main-box {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(300px);
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes rotating {
-  0% {
-    transform: rotate(0deg) translate(15%, 0);
-  }
-  100% {
-    transform: rotate(145deg) translate(-100%, -250px);
-    opacity: 0;
-  }
-}
-
-@keyframes rotating-arrow-hidden {
-  0% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
 .rotating-down {
   animation: 1s rotating-main-box;
   animation-fill-mode: forwards;
@@ -164,20 +122,6 @@
 .rotating {
   animation: 1s rotating;
   animation-fill-mode: forwards;
-}
-
-.rotated {
-  transform: rotate(145deg) translate(-100%, -250px);
-  opacity: 0;
-  display: none;
-}
-
-.rotated-arrows {
-  display: none;
-}
-
-.rotated-main-box {
-  display: none;
 }
 
 .arrows {
@@ -221,6 +165,77 @@
   align-items: center;
   position: absolute;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.animal-of-year {
+  max-height: 60px; 
+  max-width: 60px;
+  margin-right: 10px
+}
+
+@keyframes show-wish-zone {
+  0% {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0);
+  }
+
+  50% {
+    transform: rotate(-5deg) scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(3px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+@keyframes rotating-main-box {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(300px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg) translate(15%, 0);
+  }
+  100% {
+    transform: rotate(145deg) translate(-100%, -250px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes rotating-arrow-hidden {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 
 @keyframes arrows {
@@ -245,19 +260,52 @@
   }
 }
 
-@media only screen and (min-width: 890px) {
-  /* For everything bigger than 890px */
+@media only screen and (max-width: 990px) {
+  /* For everything bigger than 990px */
   .wish-quote {
-    width: 40vw;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .from-author {
+    font-size: 15px;
+  }
+
+  .wish-kids-logo {
+    height: 230px
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 650px) {
+  .blossom-bottom-right {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .wish-quote {
+    font-size: 16px;
+  }
+
+  .from-author {
+    font-size: 12px;
+  }
+
+  .blossom-top-left {
+    max-height: 90px;
+  }
+
+  .wish-kids-logo {
+    height: 170px
+  }
+
+  .animal-of-year {
+    max-height: 40px; 
+    max-width: 40px;
+  }
+
   .wish-zone {
-    position: absolute;
-    width: 70%;
-    height: 80%;
+    width: 73%;
+    height: 77%;
   }
 }

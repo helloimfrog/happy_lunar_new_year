@@ -1,7 +1,7 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
   click_to_play: "Nhấn vào chú chuột để xem điều bất ngờ nhé",
-  from_author: "From #FTeckTeam With Love",
+  from_author: "From FTeck With Love",
   label_gift_box: "Bấm để mở hộp quà nhé"
 }
 
@@ -27,12 +27,19 @@ const wishes = [
   "Cung chúc tân xuân phước vĩnh cửu – Chúc trong gia quyến được an khương – Tân niên lai đáo đa phú quý – Xuân đến an khương vạn thọ tường.",
   "Kính chúc mọi người một năm mới tràn đầy niềm vui và hạnh phúc: Vui trong sức khoẻ, trẻ trong tâm hồn, khôn trong lý tưởng và trưởng thành mọi lĩnh vực.",
   "Mỗi năm là một mùa hoa nở, mỗi năm là một mùa bội thu. Cuộc sống như cây đang lớn. Chúc bạn một năm mới Vạn sự như ý.",
-  "Đầu xuân năm mới chúc Bình An; Chúc luôn Tuổi Trẻ chúc An Khang; Chúc sang năm mới nhiều Tài Lộc; Công thành danh toại chúc Vinh Quang.",
   "Chúc mọi người vui vẻ như Chim Sẻ, khỏe mạnh như Đại Bàng, giàu sang như chim Phụng, làm lụng như chim Sâu, sống lâu như Đà Điểu.",
   "Chúc mọi người hay ăn chóng béo, tiền nhiều như kẹo, tình chặt như keo, dẻo dai như mèo, mịn màng trắng trẻo, sức khỏe như voi, gia đình mạnh khỏe, mọi người tươi trẻ, đi chơi vui vẻ.",
   "Năm mới: Đau đầu vì nhà giàu! Mệt mỏi vì học giỏi! Buồn phiền vì nhiều tiền! Ngang trái vì xinh gái! Mệt mỏi vì đẹp giai! Và mất ngủ vì không có đối thủ!",
   "Chúc các bạn có nhiều người để ý. Tỏ tình nhiều ý. Tiền nhiều nặng ký. Công việc vừa ý. Miệng cười mắt ti hí. Sống Lâu Một tí.",
-  "Năm mới phát tài, phát lộc, phát tướng, phát tình nhưng đừng phát phì!"
+  "Năm mới phát tài, phát lộc, phát tướng, phát tình nhưng đừng phát phì!",
+  "Chúc mọi người năm mới, tiền vào bạc tỉ, tiền ra rỉ rỉ, miệng cười hi hi, vạn sự như ý, cung hỉ, cung hỉ!",
+  "Mỗi năm là một mùa hoa nở, mỗi năm là một mùa bội thu. Cuộc sống như cây đang lớn. Chúc bạn một năm mới Vạn sự như ý.",
+  "Vạn lần như ý, Vạn lần như mơ, Triệu sự bất ngờ, Tỷ lần hạnh phúc. Chúc mừng năm mới!",
+  "Đầu xuân năm mới chúc Bình An; Chúc luôn Tuổi Trẻ chúc An Khang; Chúc sang năm mới nhiều Tài Lộc; Công thành danh toại chúc Vinh Quang.",
+  "Xuân này hơn hẳn mấy xuân qua. Phúc lộc đưa nhau đến từng nhà. Vài lời cung chúc tân niên mới. Vạn sự an khang vạn sự lành.",
+  "Thần tài rảo bước khắp mọi nhà, Tiền lộc đầy ắp, xuân hạnh phúc, Mọi người xum họp vui năm mới.",
+  "Nhân dịp năm mới. Mến chúc bạn hiền. Sức khỏe vô biên. Thành công liên miên. Hạnh phúc triền mien. Tiền luôn đầy túi.",
+  "Năm mới chúc bạn thực hiện được những dự định còn dang dở, quen thêm những người bạn mới, đến những vùng đất mới."
 ];
 
 function get(key = "") {
