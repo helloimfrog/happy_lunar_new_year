@@ -1,20 +1,47 @@
 .main-view {
-  background-image: url("../../../../assets/app_background.jpg");
-  background-size: 100% 100%;
+  background-image: url("../../../../assets/app_background.png");
+  background-position: bottom left;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   color: white;
-}
-
-.blossom {
-  position: absolute;
-  top: 0;
-  max-width: 75%;
-  max-height: 75%;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-2020 {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  height: 500px;
+  animation: logo 3s;
+}
+
+@keyframes logo {
+  from {
+    opacity: 0;
+    height: 700px;
+  }
+
+  to {
+    opacity: 1;
+    height: 500px;
+  }
+}
+
+@keyframes logo-responsive {
+  from {
+    opacity: 0;
+    height: 500px;
+  }
+
+  to {
+    opacity: 1;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  /* For everything smaller than 320px */
+  .logo-2020 {
+    height: 200px;
+    animation: logo-responsive 3s;
+  }
 }
