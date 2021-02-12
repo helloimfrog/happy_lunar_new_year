@@ -15,7 +15,8 @@ export default class Main extends React.Component {
       screenSize: {
         height: window.innerHeight,
         width: window.innerWidth
-      }
+      },
+      startAnimTransitions: false
     };
     this.music = AppMusic.getRandom();
   }
@@ -40,14 +41,18 @@ export default class Main extends React.Component {
         {
           showContent
             ?
-            <>
-              <div id='welcome'>
+            <div className='main-view'>
+              <div>
                 <FirstPage />
               </div>
-              <div id='gift' ref={ref => this.giftDiv = ref}>
+              <div
+                className='gift-wrapper'
+                ref={ref => this.giftDiv = ref}
+                style={{ backgroundSize: `${this.state.screenSize.width}px auto` }}
+              >
                 <SecondPage />
               </div>
-            </>
+            </div>
             : this._renderClickToPlay()
         }
       </div>
@@ -55,11 +60,11 @@ export default class Main extends React.Component {
   }
 
   _renderClickToPlay() {
-    const { screenSize } = this.state;
+    const { screenSize, startAnimTransitions } = this.state;
     const maxHeight = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
     const maxWidth = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
     return (
-      <div className="tap-to-open-main-view">
+      <div className={`tap-to-open-main-view ${startAnimTransitions ? "tap-to-open-main-view-with-anim" : ""}`}>
         <img
           alt="click-to-play"
           onClick={this._onClickToPlay}
@@ -74,7 +79,10 @@ export default class Main extends React.Component {
   }
 
   _onClickToPlay = () => {
-    this.setState({ showContent: true }, () => this.audioPlayer.play());
+    this.setState({ startAnimTransitions: true }, () => {
+      setTimeout(() => this.setState({ showContent: true }), 700);
+      this.audioPlayer.play();
+    });
     setTimeout(() => this.giftDiv.scrollIntoView({ behavior: 'smooth', }), 5000);
   }
 }

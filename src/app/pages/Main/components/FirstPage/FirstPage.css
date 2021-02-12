@@ -1,7 +1,4 @@
 .main-view {
-  background-image: url("../../../../assets/app_background.png");
-  background-position: bottom left;
-  background-size: cover;
   min-height: 100vh;
   display: flex;
   color: white;
@@ -9,9 +6,19 @@
   justify-content: center;
 }
 
-.logo-2020 {
+.logo-2021 {
   height: 500px;
-  animation: logo 3s;
+  animation: logo 2.5s;
+}
+
+.cloud-top-container {
+  position: absolute;
+  top: 0;
+  background-image: url('../../../../assets/cloud.png');
+  background-position: top;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
 }
 
 @keyframes logo {
@@ -34,14 +41,14 @@
 
   to {
     opacity: 1;
-    height: 200px;
+    height: 250px;
   }
 }
 
 @media only screen and (max-width: 450px) {
   /* For everything smaller than 320px */
-  .logo-2020 {
-    height: 200px;
-    animation: logo-responsive 3s;
+  .logo-2021 {
+    height: 250px;
+    animation: logo-responsive 2.5s;
   }
 }
