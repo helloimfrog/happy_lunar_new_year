@@ -23,7 +23,7 @@
   transform: rotate(-5deg) scale(0);
 }
 
-.wish-kids-logo {
+.wish-logo {
   height: 300px
 }
 
@@ -271,7 +271,7 @@
     font-size: 15px;
   }
 
-  .wish-kids-logo {
+  .wish-logo {
     height: 230px
   }
 }
@@ -295,8 +295,8 @@
     max-height: 90px;
   }
 
-  .wish-kids-logo {
-    height: 170px
+  .wish-logo {
+    height: 180px
   }
 
   .animal-of-year {

@@ -2,7 +2,7 @@ import React from 'react';
 import FirstPage from './components/FirstPage';
 import SecondPage from './components/SecondPage';
 import AppMusic from '../../utils/AppMusic';
-
+import { Element, scroller } from 'react-scroll';
 import './Main.css'
 import AppString from '../../utils/AppString';
 import { MAX_SCREEN_MOBILE_WIDTH } from '../../utils/AppOtherValues';
@@ -41,18 +41,18 @@ export default class Main extends React.Component {
         {
           showContent
             ?
-            <div className='main-view'>
-              <div>
+            <Element className='main-view'>
+              <Element name='firstpage'>
                 <FirstPage />
-              </div>
-              <div
+              </Element>
+              <Element
+                name='secondpage'
                 className='gift-wrapper'
-                ref={ref => this.giftDiv = ref}
                 style={{ backgroundSize: `${this.state.screenSize.width}px auto` }}
               >
                 <SecondPage />
-              </div>
-            </div>
+              </Element>
+            </Element>
             : this._renderClickToPlay()
         }
       </div>
@@ -83,6 +83,9 @@ export default class Main extends React.Component {
       setTimeout(() => this.setState({ showContent: true }), 700);
       this.audioPlayer.play();
     });
-    setTimeout(() => this.giftDiv.scrollIntoView({ behavior: 'smooth', }), 5000);
+    setTimeout(() => scroller.scrollTo('secondpage', {
+      duration: 1000,
+      smooth: 'easeInOutQuart'
+    }), 5000);
   }
 }
