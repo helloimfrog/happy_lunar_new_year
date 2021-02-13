@@ -1,6 +1,6 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
-  click_to_play: "Nhấn vào chú chuột để xem điều bất ngờ nhé",
+  click_to_play: "Nhấn vào chú trâu để xem điều bất ngờ nhé",
   from_author: "From FTeck With Love",
   label_gift_box: "Bấm để mở hộp quà nhé"
 }
