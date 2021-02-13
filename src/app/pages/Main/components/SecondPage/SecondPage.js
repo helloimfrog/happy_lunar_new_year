@@ -14,6 +14,7 @@ export default class SecondPage extends React.Component {
       animShowWishZone: false
     }
     this.wishQuote = AppString.getRandomWish();
+    this.wishCardLogo = getRandomLogoForWishCard();
   }
 
   render() {
@@ -30,8 +31,8 @@ export default class SecondPage extends React.Component {
             <div className="col-lg-4 wish-quote-image-wrapper">
               <img
                 alt="kid-lunar-new-year"
-                className="wish-kids-logo"
-                src={getRandomLogoForWishCard()}
+                className="wish-logo"
+                src={this.wishCardLogo}
               />
             </div>
             <div className="col-lg-6 wish-quote-image-wrapper">
