@@ -1,11 +1,13 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
-  click_to_play: "Nhấn vào chú trâu để xem điều bất ngờ nhé",
-  from_author: "From FTeck With Love",
-  label_gift_box: "Bấm để mở hộp quà nhé"
+  click_to_play: "Hí! Bấm vào tui để xem điều thú vị nha!",
+  from_author: "From #Frog with a love! ❤️",
+  label_gift_box: "Bấm để mở hộp quà nhé!"
 }
 
 const wishes = [
+  "Tôi ước năm mới sẽ mang đến tất cả những gì mà các bạn mong muốn, mọi sự đều thuận lợi. Chúc mừng năm mới, an khang thịnh vượng!",
+  "Tân xuân cung chúc quý huynh đài, tháng nào cũng vượt KPI. Sếp quý, đồng nghiệp thương, tiền bạc dư dả nhiều. Tình duyên như ý, không sợ thiếu người yêu.",
   "Chúc bạn năm mới một rổ tiếng cười, niềm vui và lời chúc ấm áp của tôi từ ngàn dặm xa xôi gửi tặng cho bạn tốt của tôi. Chúc bạn năm mới hạnh phúc, gặp nhiều may mắn và thành công!",
   "Chúc mừng năm mới – vạn sự như ý – sinh lý dồi dào – vàng vào cả ký – tiền ra ti tí – thật là hết ý.",
   "Chiềng làng chiềng xã, thượng hạ đông tây, xa gần đó đây, vểnh tai nghe chúc: Tân niên sung túc, lắm phúc nhiều duyên, trong túi nhiều tiền, tâm hồn vui sướng.",

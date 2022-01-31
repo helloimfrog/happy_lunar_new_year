@@ -3,52 +3,72 @@
   display: flex;
   color: white;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.logo-2021 {
-  height: 500px;
-  animation: logo 2.5s;
+.logo-2022 {
+  margin-top: 100px;
+  height: 200px;
+  animation: logo 2s;
 }
 
-.cloud-top-container {
+.first-page-bottom-decoration {
   position: absolute;
-  top: 0;
-  background-image: url('../../../../assets/cloud.png');
-  background-position: top;
-  background-size: cover;
-  height: 300px;
+  bottom: 0;
+  background-image: url('../../../../assets/bottom_page_1_deco.svg');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
   width: 100%;
 }
 
 @keyframes logo {
   from {
     opacity: 0;
-    height: 700px;
+    height: 100px;
   }
 
   to {
     opacity: 1;
-    height: 500px;
+    height: 200px;
   }
 }
 
 @keyframes logo-responsive {
   from {
     opacity: 0;
-    height: 500px;
+    transform: scale(0.5);
   }
 
   to {
     opacity: 1;
-    height: 250px;
+    transform: scale(1);
   }
 }
 
 @media only screen and (max-width: 450px) {
   /* For everything smaller than 320px */
-  .logo-2021 {
+  .logo-2022 {
     height: 250px;
+    margin-bottom: 100px;
     animation: logo-responsive 2.5s;
+  }
+  
+  .first-page-bottom-decoration {
+    background-size: cover;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* For everything smaller than 320px */
+  .logo-2022 {
+    height: 150px;
+    margin-top: 0px;
+  }
+
+  .main-view {
+    justify-content: center;
   }
 }

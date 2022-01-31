@@ -18,6 +18,7 @@ export default class FirstPage extends React.Component {
   }
 
   render() {
+    const { showFireworks } = this.state;
     let fxProps = {
       count: 3,
       interval: 1500,
@@ -33,16 +34,16 @@ export default class FirstPage extends React.Component {
     return (
       <div className="main-view">
         {
-          this.state.showFireworks
+          showFireworks
             ? <Fireworks {...fxProps} />
             : null
         }
-        <div className="cloud-top-container"/>
         <img
-          alt="2021-logo"
-          className="logo-2021"
+          alt="2022-logo"
+          className="logo-2022"
           src={require('../../../../assets/2021_logo.png')}
         />
+        <div className="first-page-bottom-decoration"/>
       </div>
     );
   }

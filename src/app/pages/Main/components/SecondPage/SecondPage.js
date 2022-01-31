@@ -20,42 +20,18 @@ export default class SecondPage extends React.Component {
   render() {
     return (
       <div className="main-view-of-2nd-screen">
+        <img
+          alt="blossom-top-left"
+          className="second-page-corner-decoration second-page-top-left"
+          src={require('../../../../assets/blossom_top_left.png')}
+        />
+        <img
+          alt="blossom-top-left"
+          className="second-page-corner-decoration second-page-bottom-right"
+          src={require('../../../../assets/blossom_bottom_right.png')}
+        />
         {this._renderGiftBox()}
-        <div className={`wish-zone ${this.state.animShowWishZone ? "wish-zone-anim" : ""}`}>
-          <img
-            alt="blossom-top-left"
-            className="blossom-top-left"
-            src={require('../../../../assets/blossom_top_left.png')}
-          />
-          <div className="row wish-quote-image-container">
-            <div className="col-lg-4 wish-quote-image-wrapper">
-              <img
-                alt="kid-lunar-new-year"
-                className="wish-logo"
-                src={this.wishCardLogo}
-              />
-            </div>
-            <div className="col-lg-6 wish-quote-image-wrapper">
-              <span className="wish-quote">
-                {this.wishQuote}
-              </span>
-            </div>
-          </div>
-          <img
-            alt="blossom-bottom-right"
-            className="blossom-bottom-right"
-            style={{ maxHeight: 150 }}
-            src={require('../../../../assets/blossom_bottom_right.png')}
-          />
-          <div className='from-author'>
-            <img
-              alt="animal-of-year"
-              className="animal-of-year"
-              src={require('../../../../assets/animal_of_year_2021.png')}
-            />
-            <span>{AppString.get("from_author")}</span>
-          </div>
-        </div>
+        {this._renderWishBox()}
       </div>
     );
   }
@@ -94,6 +70,45 @@ export default class SecondPage extends React.Component {
               src={require('../../../../assets/main_gift_box.png')}
             />
           </div>
+        </div>
+      </div>
+    )
+  }
+
+  _renderWishBox() {
+    return (
+      <div className={`wish-zone ${this.state.animShowWishZone ? "wish-zone-anim" : ""}`}>
+        <img
+          alt="blossom-top-left"
+          className="blossom-corner-decoration blossom-top-left"
+          src={require('../../../../assets/flower-corners-1.png')}
+        />
+        <div className="row wish-quote-image-container">
+          <div className="col-lg-4 wish-quote-image-wrapper">
+            <img
+              alt="kid-lunar-new-year"
+              className="wish-logo"
+              src={this.wishCardLogo}
+            />
+          </div>
+          <div className="col-lg-6 wish-quote-image-wrapper">
+            <span className="wish-quote">
+              {this.wishQuote}
+            </span>
+          </div>
+        </div>
+        <img
+          alt="blossom-bottom-right"
+          className="blossom-corner-decoration blossom-bottom-right"
+          src={require('../../../../assets/flower-corners-2.png')}
+        />
+        <div className='from-author'>
+          <img
+            alt="animal-of-year"
+            className="animal-of-year"
+            src={require('../../../../assets/animal_of_year_2022.png')}
+          />
+          <span>{AppString.get("from_author")}</span>
         </div>
       </div>
     )

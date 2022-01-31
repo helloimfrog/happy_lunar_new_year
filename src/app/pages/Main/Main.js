@@ -16,7 +16,7 @@ export default class Main extends React.Component {
         height: window.innerHeight,
         width: window.innerWidth
       },
-      startAnimTransitions: false
+      startClickToPlayAnim: false
     };
     this.music = AppMusic.getRandom();
   }
@@ -40,31 +40,37 @@ export default class Main extends React.Component {
         </audio>
         {
           showContent
-            ?
-            <Element className='main-view'>
-              <Element name='firstpage'>
-                <FirstPage />
-              </Element>
-              <Element
-                name='secondpage'
-                className='gift-wrapper'
-                style={{ backgroundSize: `${this.state.screenSize.width}px auto` }}
-              >
-                <SecondPage />
-              </Element>
-            </Element>
+            ? this._renderMainContent()
             : this._renderClickToPlay()
         }
       </div>
     );
   }
 
-  _renderClickToPlay() {
-    const { screenSize, startAnimTransitions } = this.state;
-    const maxHeight = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
-    const maxWidth = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '60%' : '20%';
+  _renderMainContent() {
+    const { showContent, screenSize } = this.state;
     return (
-      <div className={`tap-to-open-main-view ${startAnimTransitions ? "tap-to-open-main-view-with-anim" : ""}`}>
+      <Element className={`main-view ${showContent ? 'main-view-with-anim' : ''}`}>
+        <Element name='firstpage'>
+          <FirstPage />
+        </Element>
+        <Element
+          name='secondpage'
+          className='gift-wrapper'
+          style={{ backgroundSize: `${screenSize.width}px auto` }}
+        >
+          <SecondPage />
+        </Element>
+      </Element>
+    )
+  }
+
+  _renderClickToPlay() {
+    const { screenSize, startClickToPlayAnim } = this.state;
+    const maxHeight = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '40%' : '15%';
+    const maxWidth = screenSize.width < MAX_SCREEN_MOBILE_WIDTH ? '40%' : '15%';
+    return (
+      <div className={`tap-to-open-main-view ${startClickToPlayAnim ? "tap-to-open-main-view-with-anim" : ""}`}>
         <img
           alt="click-to-play"
           onClick={this._onClickToPlay}
@@ -79,7 +85,7 @@ export default class Main extends React.Component {
   }
 
   _onClickToPlay = () => {
-    this.setState({ startAnimTransitions: true }, () => {
+    this.setState({ startClickToPlayAnim: true }, () => {
       setTimeout(() => this.setState({ showContent: true }), 700);
       this.audioPlayer.play();
     });

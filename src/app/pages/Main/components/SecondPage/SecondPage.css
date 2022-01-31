@@ -1,4 +1,5 @@
 .main-view-of-2nd-screen {
+  position: relative;
   min-width: 100%;
   min-height: 100vh;
   display: flex;
@@ -6,6 +7,7 @@
   justify-content: center;
   flex-direction: column;
   color: black;
+  overflow: hidden;
 }
 
 .wish-zone {
@@ -20,7 +22,7 @@
   -webkit-box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
   -moz-box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
   box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
-  transform: rotate(-5deg) scale(0);
+  transform: rotate(-3deg) scale(0);
 }
 
 .wish-logo {
@@ -53,17 +55,36 @@
   font-size: 21px;
 }
 
-.blossom-top-left {
+.blossom-corner-decoration {
   position: absolute;
+  max-height: 200px;
+}
+
+.blossom-top-left {
   top: 0;
   left: 0;
-  max-height: 150px;
 }
 
 .blossom-bottom-right {
-  position: absolute;
   bottom: 0;
-  right: 0
+  right: 0;
+}
+
+.second-page-corner-decoration {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.second-page-top-left {
+  top: 0;
+  left: 0;
+}
+
+.second-page-bottom-right {
+  bottom: 0;
+  right: 0;
 }
 
 .from-author {
@@ -177,16 +198,16 @@
 @keyframes show-wish-zone {
   0% {
     opacity: 0;
-    transform: rotate(-5deg) scale(0);
+    transform: rotate(-3deg) scale(0);
   }
 
   50% {
-    transform: rotate(-5deg) scale(1.1);
+    transform: rotate(-3deg) scale(1.05);
   }
 
   100% {
     opacity: 1;
-    transform: rotate(-5deg) scale(1);
+    transform: rotate(-3deg) scale(1);
   }
 }
 
@@ -274,25 +295,19 @@
   .wish-logo {
     height: 230px
   }
-}
 
-@media only screen and (max-width: 650px) {
-  .blossom-bottom-right {
-    display: none;
+  .blossom-corner-decoration {
+    max-height: 150px;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 525px) {
   .wish-quote {
     font-size: 16px;
   }
 
   .from-author {
     font-size: 12px;
-  }
-
-  .blossom-top-left {
-    max-height: 90px;
   }
 
   .wish-logo {
@@ -305,7 +320,7 @@
   }
 
   .wish-zone {
-    width: 73%;
-    height: 77%;
+    width: 75%;
+    height: 70%;
   }
 }

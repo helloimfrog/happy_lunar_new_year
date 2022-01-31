@@ -2,22 +2,25 @@
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
-  background-image: url("../../assets/pure_bgr.png");
+  background: rgb(237,237,238);
+  background: linear-gradient(180deg, rgba(237,237,238,1) 0%, rgba(237,237,238,1) 35%, rgba(255,255,255,1) 100%);
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+
+.main-view-with-anim {
+  animation: show-main-view-anim 2s;
+  animation-fill-mode: forwards;
 }
 
 .gift-wrapper {
   display: flex;
   width: 100%;
   min-height: 100vh;
-  background-image: url('../../assets/pagodas.png');
-  background-position: bottom;
-  background-repeat: no-repeat;
 }
 
 .tap-to-open-main-view {
-  background-image: url("../../assets/app_background.jpg");
+  background-image: url("../../assets/pure_bgr.png");
   background-position: bottom;
   background-attachment: fixed;
   background-size: cover;
@@ -53,5 +56,15 @@
   to {
     opacity: 0;
     transform: scale(1.2);
+  }
+}
+
+@keyframes show-main-view-anim {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
