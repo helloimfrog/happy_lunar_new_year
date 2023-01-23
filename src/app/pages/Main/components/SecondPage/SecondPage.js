@@ -7,7 +7,7 @@ import Base64 from '../../../../utils/Base64';
 import './SecondPage.css';
 
 /*
-  Truyền vào url 3 cái params sau
+  Truyền vào url 3 cái params sau vào url
   - image_url: url ảnh (đã encode)
   - content: chuỗi string base64 mã hoá lời chúc
   - author: chuỗi string base64 mã hoã tác giả
