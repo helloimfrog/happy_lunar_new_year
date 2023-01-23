@@ -1,20 +1,60 @@
 import React from 'react';
 import AppString from '../../../../utils/AppString';
 import { getRandomLogoForWishCard } from '../../../../utils/AppOtherValues';
+import { useSearchParams } from "react-router-dom";
+import Base64 from '../../../../utils/Base64';
 
 import './SecondPage.css';
 
-export default class SecondPage extends React.Component {
-  constructor() {
-    super();
+/*
+  Truyền vào url 3 cái params sau
+  - image_url: url ảnh (đã encode)
+  - content: chuỗi string base64 mã hoá lời chúc
+  - author: chuỗi string base64 mã hoã tác giả
+*/
+
+class SecondPageClassComponent extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       rotating: "",
       rotatingMainBox: "",
       rotatingArrows: "",
       animShowWishZone: false
     }
-    this.wishQuote = AppString.getRandomWish();
-    this.wishCardLogo = getRandomLogoForWishCard();
+    this._processWishQuote(props);
+    this._processWishLogo(props);
+    this._processWishAuthor(props);
+  }
+
+  _processWishQuote(props) {
+    const { urlParams } = props;
+
+    const wishQuoteBase64 = urlParams.get('content');
+
+    this.wishQuote = wishQuoteBase64
+      ? Base64.decodeBase64(wishQuoteBase64)
+      : AppString.getRandomWish();
+  }
+
+  _processWishLogo(props) {
+    const { urlParams } = props;
+
+    const wishLogoUrl = urlParams.get('image_url');
+
+    this.wishCardLogo = wishLogoUrl
+      ? wishLogoUrl
+      : getRandomLogoForWishCard();
+  }
+
+  _processWishAuthor(props) {
+    const { urlParams } = props;
+
+    const wishAuthorBase64 = urlParams.get('author');
+
+    this.wishAuthor = wishAuthorBase64
+      ? Base64.decodeBase64(wishAuthorBase64)
+      : AppString.get("from_author");
   }
 
   render() {
@@ -108,9 +148,21 @@ export default class SecondPage extends React.Component {
             className="animal-of-year"
             src={require('../../../../assets/animal_of_year_1.png')}
           />
-          <span>{AppString.get("from_author")}</span>
+          <span>
+            {this.wishAuthor}
+          </span>
         </div>
       </div>
     )
   }
 }
+
+const SecondPage = () => {
+  let [searchParams] = useSearchParams();
+
+  return (
+    <SecondPageClassComponent urlParams={searchParams} />
+  )
+}
+
+export default SecondPage

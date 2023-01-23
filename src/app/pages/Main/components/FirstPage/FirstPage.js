@@ -42,8 +42,9 @@ export default class FirstPage extends React.Component {
         <img
           alt="logo-year-number"
           className="logo-year-number"
-          src={require('../../../../assets/2021_logo.png')}
+          src={require('../../../../assets/year_logo_in_number.png')}
         />
+        <div className="first-page-top-decoration"/>
         <div className="first-page-bottom-decoration"/>
       </div>
     );

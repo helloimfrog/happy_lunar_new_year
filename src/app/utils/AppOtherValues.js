@@ -12,7 +12,12 @@ export function getRandomLogoForWishCard() {
     require('../assets/family_3.png'),
     require('../assets/lunar_celebrate_1.png'),
     require('../assets/family_4.png'),
-    require('../assets/couple.png')
+    require('../assets/couple.png'),
+    require('../assets/lunar_celebrate_2.png'),
+    require('../assets/lunar_celebrate_3.png'),
+    require('../assets/lunar_celebrate_4.png'),
+    require('../assets/couple_2.png'),
+    require('../assets/kid_2.png'),
   ];
   return logos[randomNumber(0, logos.length)];
 }

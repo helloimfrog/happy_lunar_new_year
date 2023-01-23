@@ -15,11 +15,22 @@
 .first-page-bottom-decoration {
   position: absolute;
   bottom: 0;
-  background-image: url('../../../../assets/bottom_page_1_deco.svg');
+  background-image: url('../../../../assets/bottom_page_1_deco.png');
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
+  width: 100%;
+}
+
+.first-page-top-decoration {
+  position: absolute;
+  top: 0;
+  background-image: url('../../../../assets/top_page_1_deco.png');
+  background-position: top;
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 200px;
   width: 100%;
 }
 
@@ -48,13 +59,14 @@
 }
 
 @media only screen and (max-width: 450px) {
+
   /* For everything smaller than 320px */
   .logo-year-number {
     height: 250px;
     margin-bottom: 100px;
     animation: logo-responsive 2.5s;
   }
-  
+
   .first-page-bottom-decoration {
     background-size: cover;
     height: 250px;
@@ -62,6 +74,7 @@
 }
 
 @media only screen and (max-width: 800px) {
+
   /* For everything smaller than 320px */
   .logo-year-number {
     height: 150px;

@@ -343,7 +343,9 @@
 
   .wish-logo {
     width: 100%;
-    height: 230px
+    height: 230px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .blossom-corner-decoration {

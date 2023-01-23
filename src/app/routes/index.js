@@ -7,7 +7,7 @@ import Main from '../pages/Main';
 
 const routePath = {
   main: '/',
-  notFound: ''
+  notFound: '*'
 }
 
 const route = [
