@@ -16,17 +16,19 @@
   height: 66%;
   display: flex;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
   -webkit-box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
   -moz-box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
   box-shadow: 0px -1px 40px -10px rgba(0, 0, 0, 0.65);
-  transform: rotate(-3deg) scale(0);
+  transform: rotate(-2deg) scale(0);
 }
 
 .wish-logo {
-  height: 300px
+  height: 300px;
+  width: 115%;
+  object-fit: contain;
 }
 
 .wish-zone-anim {
@@ -46,6 +48,12 @@
   align-items: center;
 }
 
+.wish-quote-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .wish-quote {
   color: red;
   text-align: center;
@@ -58,6 +66,7 @@
 .blossom-corner-decoration {
   position: absolute;
   max-height: 200px;
+  margin: 5px;
 }
 
 .blossom-top-left {
@@ -74,7 +83,6 @@
   display: flex;
   position: absolute;
   overflow: hidden;
-  max-height: 500px;
 }
 
 .second-page-top-left {
@@ -85,6 +93,9 @@
 .second-page-bottom-right {
   bottom: 0;
   right: 0;
+  margin-right: -150px;
+  margin-bottom: -100px;
+  max-height: 550px;
 }
 
 .from-author {
@@ -94,7 +105,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px;
+  margin-left: 20px;
+  margin-bottom: 25px;
   font-size: 18px;
   font-family: 'Pacifico', cursive;
 }
@@ -112,11 +124,13 @@
   cursor: pointer;
 }
 
-.main-gift-box, .lid-gift-box {
+.main-gift-box,
+.lid-gift-box {
   align-self: center;
 }
 
-.lid-gift-box__lid, .main-gift-box__main {
+.lid-gift-box__lid,
+.main-gift-box__main {
   max-width: 260px;
 }
 
@@ -190,7 +204,7 @@
 }
 
 .animal-of-year {
-  max-height: 60px; 
+  max-height: 60px;
   max-width: 60px;
   margin-right: 10px
 }
@@ -198,30 +212,39 @@
 @keyframes show-wish-zone {
   0% {
     opacity: 0;
-    transform: rotate(-3deg) scale(0);
+    transform: rotate(-2deg) scale(0);
   }
 
   50% {
-    transform: rotate(-3deg) scale(1.05);
+    transform: rotate(-2deg) scale(1.05);
   }
 
   100% {
     opacity: 1;
-    transform: rotate(-3deg) scale(1);
+    transform: rotate(-2deg) scale(1);
   }
 }
 
 @keyframes wiggle {
-  10%, 90% {
+
+  10%,
+  90% {
     transform: translate3d(-2px, 0, 0);
   }
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(3px, 0, 0);
   }
-  30%, 50%, 70% {
+
+  30%,
+  50%,
+  70% {
     transform: translate3d(-5px, 0, 0);
   }
-  40%, 60% {
+
+  40%,
+  60% {
     transform: translate3d(5px, 0, 0);
   }
 }
@@ -230,6 +253,7 @@
   0% {
     transform: translateY(0px);
   }
+
   100% {
     transform: translateY(300px);
     opacity: 0;
@@ -241,6 +265,7 @@
   0% {
     transform: rotate(0deg) translate(15%, 0);
   }
+
   100% {
     transform: rotate(145deg) translate(-100%, -250px);
     opacity: 0;
@@ -253,6 +278,7 @@
     transform: translateY(0px);
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     display: none;
@@ -265,15 +291,19 @@
     border-bottom: 5px solid transparent;
     transform: translate(-13.33333px, -23.33333px) rotate(-45deg);
   }
-  10%, 90% {
+
+  10%,
+  90% {
     border-left: 5px solid transparent;
     border-bottom: 5px solid transparent;
   }
+
   50% {
     border-left: 5px solid rgba(0, 0, 0, 0.7);
     border-bottom: 5px solid rgba(0, 0, 0, 0.7);
     transform: translate(-13.33333px, 0px) rotate(-45deg);
   }
+
   100% {
     border-left: 5px solid transparent;
     border-bottom: 5px solid transparent;
@@ -281,7 +311,26 @@
   }
 }
 
+@media only screen and (max-width: 1160px) {
+  .wish-quote {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .second-page-bottom-right {
+    max-height: 350px;
+    margin-right: -100px;
+    margin-bottom: -90px;
+  }
+
+  .second-page-top-left {
+    max-height: 300px;
+  }
+}
+
 @media only screen and (max-width: 990px) {
+
   /* For everything bigger than 990px */
   .wish-quote {
     margin-top: 15px;
@@ -293,11 +342,17 @@
   }
 
   .wish-logo {
+    width: 100%;
     height: 230px
   }
 
   .blossom-corner-decoration {
-    max-height: 150px;
+    max-height: 120px;
+  }
+
+  .lid-gift-box__lid,
+  .main-gift-box__main {
+    max-width: 200px;
   }
 }
 
@@ -307,15 +362,15 @@
   }
 
   .from-author {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .wish-logo {
-    height: 180px
+    height: 180px;
   }
 
   .animal-of-year {
-    max-height: 40px; 
+    max-height: 40px;
     max-width: 40px;
   }
 

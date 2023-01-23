@@ -15,6 +15,8 @@ function getRandom() {
   return musicList[Math.floor(Math.random() * (musicList.length))];
 }
 
-export default {
+const thingsToExport =  {
   getRandom
 }
+
+export default thingsToExport

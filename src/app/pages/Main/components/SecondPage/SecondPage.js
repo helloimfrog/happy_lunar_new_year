@@ -86,7 +86,7 @@ export default class SecondPage extends React.Component {
         <div className="row wish-quote-image-container">
           <div className="col-lg-4 wish-quote-image-wrapper">
             <img
-              alt="kid-lunar-new-year"
+              alt="wish-logo"
               className="wish-logo"
               src={this.wishCardLogo}
             />
@@ -106,7 +106,7 @@ export default class SecondPage extends React.Component {
           <img
             alt="animal-of-year"
             className="animal-of-year"
-            src={require('../../../../assets/animal_of_year_2022.png')}
+            src={require('../../../../assets/animal_of_year_1.png')}
           />
           <span>{AppString.get("from_author")}</span>
         </div>

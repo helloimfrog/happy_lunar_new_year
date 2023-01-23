@@ -1,7 +1,7 @@
 const strings = {
   happy_new_year: "Chúc mừng năm mới",
-  click_to_play: "Hí! Bấm vào tui để xem điều thú vị nha!",
-  from_author: "From #Frog with a love! ❤️",
+  click_to_play: "Hí! Bấm vào tui nha!",
+  from_author: "From #Ếch with love! ❤️",
   label_gift_box: "Bấm để mở hộp quà nhé!"
 }
 
@@ -40,8 +40,16 @@ const wishes = [
   "Đầu xuân năm mới chúc Bình An; Chúc luôn Tuổi Trẻ chúc An Khang; Chúc sang năm mới nhiều Tài Lộc; Công thành danh toại chúc Vinh Quang.",
   "Xuân này hơn hẳn mấy xuân qua. Phúc lộc đưa nhau đến từng nhà. Vài lời cung chúc tân niên mới. Vạn sự an khang vạn sự lành.",
   "Thần tài rảo bước khắp mọi nhà, Tiền lộc đầy ắp, xuân hạnh phúc, Mọi người xum họp vui năm mới.",
-  "Nhân dịp năm mới. Mến chúc bạn hiền. Sức khỏe vô biên. Thành công liên miên. Hạnh phúc triền mien. Tiền luôn đầy túi.",
-  "Năm mới chúc bạn thực hiện được những dự định còn dang dở, quen thêm những người bạn mới, đến những vùng đất mới."
+  "Nhân dịp năm mới. Mến chúc bạn hiền. Sức khỏe vô biên. Thành công liên miên. Hạnh phúc triền miên. Tiền luôn đầy túi.",
+  "Năm mới chúc bạn thực hiện được những dự định còn dang dở, quen thêm những người bạn mới, đến những vùng đất mới.",
+  "Chúc mừng năm mới – Chúc bạn luôn: Đong đầy hạnh phúc – Gói trọn lộc tài – Giữ mãi an khang – Thắt chặt phú quý.",
+  "Chúc mọi người năm mới: Răng vẫn nguyên hàm, tóc không giảm và lãi vay không tăng. Năm mới bình an mọi người nhé!",
+  "Năm mới năm me. Gia đình mạnh khỏe. Mọi người tươi trẻ. Đi chơi vui vẻ",
+  "Năm mới càng sung sức, không bực tức, không đau nhức, gấp đôi lợi tức... tiền vào thơm phức. Happy New Year!",
+  "Happy new year! Chúc các bạn năm mới cười đến trẹo quai hàm, ham làm đến quên mệt mỏi, học giỏi cứ thi là thành, ăn khỏe như vui số cân không đổi!",
+  "Năm mới tới rồi! Chúc mọi người tiền vào cửa trước, tiền lẻn cửa sau, hai cái va vào nhau bay vào két sắt.",
+  "Tết năm nay hứa mang tiền về cho mẹ, không mang ưu phiền về cho mẹ!",
+  "Chúc mừng năm mới! Khoẻ hơn Lý Đức. Mạnh hơn Geogre W.Bush. Giàu hơn Bill Gates. Quyến rũ hơn Don Juan. Bí mật hơn… Bin Laden. May mắn hơn Xuân Tóc Đỏ."
 ];
 
 function get(key = "") {
@@ -52,7 +60,9 @@ function getRandomWish() {
   return wishes[Math.floor(Math.random() * (wishes.length - 1))]
 }
 
-export default {
+const thingsToExport =  {
   get,
   getRandomWish
 };
+
+export default thingsToExport

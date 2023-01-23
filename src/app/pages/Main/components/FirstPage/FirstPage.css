@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.logo-2022 {
+.logo-year-number {
   margin-top: 100px;
   height: 200px;
   animation: logo 2s;
@@ -49,7 +49,7 @@
 
 @media only screen and (max-width: 450px) {
   /* For everything smaller than 320px */
-  .logo-2022 {
+  .logo-year-number {
     height: 250px;
     margin-bottom: 100px;
     animation: logo-responsive 2.5s;
@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: 800px) {
   /* For everything smaller than 320px */
-  .logo-2022 {
+  .logo-year-number {
     height: 150px;
     margin-top: 0px;
   }

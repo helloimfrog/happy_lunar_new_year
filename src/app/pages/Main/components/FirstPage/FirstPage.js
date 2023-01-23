@@ -22,7 +22,7 @@ export default class FirstPage extends React.Component {
     let fxProps = {
       count: 3,
       interval: 1500,
-      colors: ['#cc3333', '#4CAF50', '#81C784'],
+      colors: ['#cc3333', '#4CAF50', '#3eded1', '#bfed28'],
       calc: (props, i) => ({
         ...props,
         x: this.isMobileViewport
@@ -31,6 +31,7 @@ export default class FirstPage extends React.Component {
         y: window.innerHeight / 2 - 100
       })
     }
+
     return (
       <div className="main-view">
         {
@@ -39,8 +40,8 @@ export default class FirstPage extends React.Component {
             : null
         }
         <img
-          alt="2022-logo"
-          className="logo-2022"
+          alt="logo-year-number"
+          className="logo-year-number"
           src={require('../../../../assets/2021_logo.png')}
         />
         <div className="first-page-bottom-decoration"/>
